@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+    h1, h2 {
+      color: #0d47a1;
+    }
+    #slideshow {
+      width: 400px;
+      height: 300px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    #slideshow img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    #animateBox {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      position: relative;
+      margin: 20px auto;
+    }
+    button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Interactive Webpage</h1>
+
+  <!-- Section 1: Arithmetic Operations -->
+  <h2>Arithmetic Operations</h2>
+  <button onclick="performOperations()">Perform Arithmetic Operations</button>
+
+  <!-- Section 2: Image Slideshow -->
+  <h2>Image Slideshow</h2>
+  <div id="slideshow">
+    <img id="slide" src="https://via.placeholder.com/400x300/0000FF/808080?text=Slide1" alt="Slide">
+  </div>
+
+  <!-- Section 3: Simple Animation -->
+  <h2>Simple Animation</h2>
+  <div id="animateBox"></div>
+
+  <script>
+    // Arithmetic Operations Section
+    function addNumbers(a, b) {
+      return a + b;
+    }
+
+    function subtractNumbers(a, b) {
+      return a - b;
+    }
+
+    function multiplyNumbers(a, b) {
+      return a * b;
+    }
+
+    function divideNumbers(a, b) {
+      if (b === 0) {
+        return "Cannot divide by zero!";
+      }
+      return a / b;
+    }
+
+    function performOperations() {
+      let num1 = parseFloat(prompt("Enter the first number:"));
+      let num2 = parseFloat(prompt("Enter the second number:"));
+
+      alert("Addition: " + addNumbers(num1, num2));
+      alert("Subtraction: " + subtractNumbers(num1, num2));
+      alert("Multiplication: " + multiplyNumbers(num1, num2));
+      alert("Division: " + divideNumbers(num1, num2));
+    }
+
+    // Image Slideshow Section
+    let images = [
+      "https://via.placeholder.com/400x300/0000FF/808080?text=Slide1",
+      "https://via.placeholder.com/400x300/FF0000/FFFFFF?text=Slide2",
+      "https://via.placeholder.com/400x300/00FF00/000000?text=Slide3",
+      "https://via.placeholder.com/400x300/FFFF00/0000FF?text=Slide4"
+    ];
+    let currentIndex = 0;
+
+    function changeSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById("slide").src = images[currentIndex];
+    }
+
+    setInterval(changeSlide, 2000); // Change image every 2 seconds
+
+    // Simple Animation Section
+    let box = document.getElementById("animateBox");
+    let position = 0;
+
+    function moveBox() {
+      if (position < 350) {
+        position++;
+        box.style.left = position + "px";
+        requestAnimationFrame(moveBox); // Smooth animation
+      }
+    }
+
+    // Start the animation
+    moveBox();
+  </script>
+</body>
+</html>

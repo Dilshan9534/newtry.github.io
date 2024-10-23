@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Div, ID, and Classes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Added to handle responsiveness */
+        }
+      
+        .content {
+            padding: 20px;
+            background-color: #fff;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            flex-basis: 48%; /* Makes content responsive */
+        }
+        .highlight {
+            background-color: #e3f2fd;
+        }
+        .box {
+            padding: 10px;
+            border: 2px solid #2196f3;
+            margin: 10px 0;
+        }
+     
+        #sidebar {
+            background-color: #f8bbd0;
+            padding: 15px;
+            border: 1px solid #e91e63;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        #main {
+            background-color: #dcedc8;
+            padding: 15px;
+            border: 1px solid #8bc34a;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+      
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+            color: #333;
+        }
+        ul li {
+            padding: 5px 0;
+        }
+     
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #4caf50;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #8bc34a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="main" class="content">
+            <h2>Main Content Area</h2>
+            <p>This is the main content area. Here, you can apply various styles using CSS IDs and classes.</p>
+            <div class="box">This is a box inside the main content.</div>
+
+            <h3>Topics Covered</h3>
+            <ul>
+                <li>HTML Structure</li>
+                <li>CSS Box Model</li>
+                <li>Working with Divs</li>
+                <li>CSS IDs and Classes</li>
+                <li>Lists and Tables</li>
+            </ul>
+        </div>
+
+        <div id="sidebar" class="content highlight">
+            <h2>Sidebar</h2>
+            <p>This is a sidebar. You can use the <code>.highlight</code> class to emphasize it.</p>
+            <div class="box">Sidebar box for additional information.</div>
+        </div>
+    </div>
+
+    <h3>Student Marks Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alice</td>
+                <td>Math</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Science</td>
+                <td>89</td>
+            </tr>
+            <tr>
+                <td>Charlie</td>
+                <td>English</td>
+                <td>92</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
